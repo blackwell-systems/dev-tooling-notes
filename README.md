@@ -1,4 +1,4 @@
-````markdown
+
 # Blackwell Dev Tools
 
 My personal, evolving list of development tools I use across **macOS**, **Linux (Lima/Ubuntu)**, and **WSL2**.
@@ -246,7 +246,3 @@ A short list of “maybe soon” items I’ll only add when they earn a permanen
 ## License
 
 MIT (or whatever you choose for your meta-doc repos).
-
-```
-::contentReference[oaicite:0]{index=0}
-```
