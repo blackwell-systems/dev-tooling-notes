@@ -149,21 +149,6 @@ This category pairs naturally with:
 
 ---
 
-## Windows & PowerShell (future-facing)
-
-If/when I expand dotfiles deeper into Windows:
-- **PowerShell**
-- A Windows-friendly secrets path that complements Bitwarden/1Password:
-  - **Windows Credential Manager**
-  - **1Password CLI**
-  - **Bitwarden CLI**
-  - (And/or a wrapper layer that keeps parity with `vaultmux` patterns)
-
-Also:
-- **AWS Powertools** for Windows-oriented testing workflows (as needed)
-
----
-
 ## CI/CD
 
 ### GitHub Actions
