@@ -42,6 +42,9 @@ I try to avoid duplicating setup steps that my dotfiles bootstrap already automa
 - **Python** (with uv)
 - **Rust**
 - **Node.js** (as needed)
+- Bash
+- Zsh
+- **PowerShell (pwsh)** — cross-platform PowerShell for dev/testing scripts on macOS/Linux with Windows parity.
 
 ### CI/CD
 - **GitHub Actions** — used across OSS repos.
