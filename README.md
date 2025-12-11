@@ -11,7 +11,6 @@ I keep tools that:
 - reduce friction across machines,
 - support cloud-first workflows,
 - improve terminal ergonomics,
-- are stable enough to trust daily,
 - or enable local emulation of cloud/services.
 
 I try to avoid duplicating setup steps that my dotfiles bootstrap already automates.
@@ -72,6 +71,30 @@ I try to avoid duplicating setup steps that my dotfiles bootstrap already automa
 
 ### File management
 - **yazi** — fast terminal file manager
+
+### Documentation & Diagrams
+- **glow** — Markdown rendering in terminal (already listed above)
+- **mermaid-cli** — Render and validate mermaid diagrams
+  ```bash
+  npm install -g @mermaid-js/mermaid-cli
+
+  # Validate diagram syntax
+  mmdc -i diagram.mmd --validate
+
+  # Render to SVG/PNG (catches layout errors GitHub might miss)
+  mmdc -i diagram.mmd -o output.svg
+  ```
+
+  **Why this matters:**
+  - Mermaid diagrams in README.md files render on GitHub, but complex diagrams can fail silently
+  - Validating locally catches syntax errors before pushing
+  - Rendering locally catches layout complexity issues (nested subgraphs, long chains)
+  - GitHub's mermaid version may differ from latest CLI, so test both
+
+  **Common gotchas:**
+  - `--validate` only checks syntax, not rendering feasibility
+  - Deep nesting (subgraphs within subgraphs) often fails on GitHub
+  - Keep diagrams simple: flat structure > nested complexity
 
 ---
 
@@ -135,20 +158,28 @@ Patterns I reach for:
   Validate that binaries and shell scripts don’t secretly depend on heavyweight OS assumptions.
 - **LocalStack-driven integration tests**  
   Only what I need, with minimal AWS surface area.
-- **“Fresh machine” setup tests**  
+- **"Fresh machine" setup tests**
   Run install + setup in a clean container to catch missing dependencies early.
-
-This category pairs naturally with:
-- **dotfiles doctor**
-- **vaultmux** backend sanity checks
-- CLI release pipelines
 
 ---
 
 ## Databases & API Testing
 
-- **DBeaver** — mostly because it’s the standard at work
-- (Add your preferred local DB clients here if you want parity across machines)
+### Database Systems
+- **DynamoDB** — AWS NoSQL database
+- **MongoDB** — Document database
+- **PostgreSQL** — Advanced open source SQL
+- **MySQL** — Popular open source SQL
+- **SQLite** — Embedded SQL database
+- **Amazon Redshift** — Data warehouse for analytics
+
+### Database Clients & Tools
+- **DBeaver** — universal database client (supports all SQL variants)
+- **TablePlus** — modern database client (macOS/Windows/Linux)
+- **psql** — PostgreSQL command-line client
+- **mongosh** — MongoDB shell
+- **AWS CLI** — for DynamoDB operations
+- **NoSQL Workbench** — DynamoDB visual client
 
 ---
 
@@ -192,40 +223,6 @@ If you prefer a reproducible approach:
 ```sh
 brew bundle
 ```
-
----
-
-## Suggested Repo Structure
-
-```text
-.
-├── README.md
-├── Brewfile               # optional
-├── tooling/
-│   ├── terminal.md
-│   ├── go.md
-│   ├── python.md
-│   ├── rust.md
-│   ├── aws.md
-│   ├── windows.md
-│   ├── containers.md
-│   └── cicd.md
-└── notes/
-    └── decisions.md       # why I chose X over Y
-```
-
-Keep the README concise and push deep details into `tooling/*`.
-
----
-
-## What I’m Evaluating Next
-
-A short list of “maybe soon” items I’ll only add when they earn a permanent spot:
-
-* additional Go version strategy (if multi-version pain becomes real)
-* deeper Windows parity for vault + hooks
-* more standardized local testing harness around LocalStack + ngrok
-* a repeatable dev auth stack (Keycloak + small helper scripts / JWT tooling) for realistic local auth flows
 
 ---
 
