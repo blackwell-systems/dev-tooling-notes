@@ -40,6 +40,7 @@ I try to avoid duplicating setup steps that my dotfiles bootstrap already automa
 - **Go**
 - **Python** (with uv)
 - **Rust**
+- Java
 - **Node.js** (as needed)
 - Bash
 - Zsh
