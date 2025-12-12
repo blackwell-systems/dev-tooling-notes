@@ -112,15 +112,22 @@ Notes:
   (This repo tracks tools, not policy.)
 
 ### Python
-I’m standardizing around:
+I'm standardizing around:
 - **uv** — dependency + environment workflow
-- **ruff** — lint/format (fast enough to be default)
-- **black** — formatter (if/when you want explicit Black parity in projects)
+- **ruff** — lint/format (fast enough to be default, Black-compatible, replaces multiple tools)
+- **black** — formatter (if/when you need explicit Black parity, though Ruff's formatter is 10-100x faster)
 - **hatchling** — builds
 
 Optional but common:
 - **pytest**
 - **mypy** / **pyright** (when type-checking matters)
+- **pydantic** — data validation and serialization
+- **fastapi** — modern async web framework
+- **mangum** — AWS Lambda adapter for ASGI apps (FastAPI, Starlette)
+
+Notes:
+- FastAPI + pydantic is my preferred Python API stack: automatic validation, serialization, and OpenAPI docs from type hints. Feels closer to strongly-typed languages while staying Pythonic.
+- Mangum lets you deploy the same FastAPI app to Lambda without code changes—just wrap the ASGI app.
 
 ### Rust
 - **rustup**
