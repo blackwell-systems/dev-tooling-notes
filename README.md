@@ -129,6 +129,21 @@ Notes:
 - FastAPI + pydantic is my preferred Python API stack: automatic validation, serialization, and OpenAPI docs from type hints. Feels closer to strongly-typed languages while staying Pythonic.
 - Mangum lets you deploy the same FastAPI app to Lambda without code changes—just wrap the ASGI app.
 
+### Java
+Core:
+- **OpenJDK** (via Homebrew or SDKMAN)
+- **Maven** — dependency management and build tool
+- **Gradle** — modern build automation
+
+Optional:
+- **SDKMAN** — manage multiple JDK versions
+- **Spring Boot** — production-ready Java framework
+- **Quarkus** — cloud-native Java (fast startup, low memory)
+
+Notes:
+- SDKMAN is useful if you work across projects with different Java versions
+- Gradle is generally faster than Maven, but Maven has broader adoption
+
 ### Rust
 - **rustup**
 - **cargo**
