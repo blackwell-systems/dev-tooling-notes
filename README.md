@@ -117,8 +117,6 @@ I'm standardizing around:
 - **ruff** — lint/format (fast enough to be default, Black-compatible, replaces multiple tools)
 - **black** — formatter (if/when you need explicit Black parity, though Ruff's formatter is 10-100x faster)
 - **hatchling** — builds
-
-Optional but common:
 - **pytest**
 - **mypy** / **pyright** (when type-checking matters)
 - **pydantic** — data validation and serialization
