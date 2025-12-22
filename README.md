@@ -106,6 +106,15 @@ Core:
 - **Go toolchain** (via Homebrew on macOS)
 - **golangci-lint**
 - **gofumpt** / **goimports** (if you want stricter formatting)
+- **GoReleaser** — automated release tool for Go projects
+  - Builds binaries for all major OS/arch combinations (Linux, macOS, Windows × x86_64/ARM64)
+  - Generates checksums and SBOMs (Software Bill of Materials)
+  - Creates GitHub/GitLab releases with release notes
+  - Builds Docker images, Homebrew formulas, Snap/APT/RPM packages
+  - Handles code signing for macOS/Windows
+  - Typical pipeline: Tag a release (v1.2.3) → CI triggers GoReleaser → Binaries, checksums, and packages are built → Assets uploaded to GitHub Releases
+  - Eliminates manual cross-compilation setup and platform-specific toolchain configuration
+  - Standard practice for distributing Go CLI tools
 
 Notes:
 - Installing Go via Homebrew is totally fine for day-to-day dev.
