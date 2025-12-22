@@ -159,6 +159,11 @@ Notes:
 - **rustfmt**
 - **cargo-watch**
 
+Testing:
+- **rstest** — parameterized testing framework for consolidating similar test cases. Instead of writing separate test functions for each variant, use `#[rstest]` with `#[case]` attributes to test multiple inputs/outputs in a single test function
+- **proptest** — property-based testing library that generates random test inputs to find edge cases. Useful for testing invariants (e.g., "parsing then serializing should return the original input") rather than specific examples
+- **insta** — snapshot testing tool that captures output as "snapshots" and detects changes. Perfect for testing serialization formats (JSON, YAML), rendered output (SVG, HTML), or CLI output where you want to catch any unintended changes
+
 ### Node.js (as needed)
 - **nvm** (or a lazy-load integration)
 
