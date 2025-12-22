@@ -158,6 +158,7 @@ Notes:
 - **clippy**
 - **rustfmt**
 - **cargo-watch**
+- **cargo-dist** — distribution and release tool for Rust projects. Similar to GoReleaser but Rust-native. Builds binaries for multiple platforms, generates installers (shell scripts, PowerShell, npm packages), creates GitHub releases, and handles checksum generation. Integrates directly with GitHub Actions for automated releases on tag push
 
 Testing:
 - **rstest** — parameterized testing framework for consolidating similar test cases. Instead of writing separate test functions for each variant, use `#[rstest]` with `#[case]` attributes to test multiple inputs/outputs in a single test function
