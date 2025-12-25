@@ -8,6 +8,10 @@ This is a living reference for future-me and anyone who wants a practical, moder
 - [Philosophy](#philosophy)
 - [At-a-glance Stack](#at-a-glance-stack)
 - [Terminal & Shell](#terminal--shell)
+  - [Shell UX](#shell-ux)
+  - [Modern CLI essentials](#modern-cli-essentials)
+  - [Documentation & Diagrams](#documentation--diagrams)
+  - [Markdown Formatting](#markdown-formatting)
 - [Language Tooling](#language-tooling)
   - [Go](#go)
   - [Python](#python)
@@ -114,6 +118,54 @@ I try to avoid duplicating setup steps that my dotfiles bootstrap already automa
   - `--validate` only checks syntax, not rendering feasibility
   - Deep nesting (subgraphs within subgraphs) often fails on GitHub
   - Keep diagrams simple: flat structure > nested complexity
+
+### Markdown Formatting
+
+Documentation is a first-class citizen in my development process. Outdated documentation is worse than no documentation—at least with no docs, you're encouraged to find answers yourself rather than rely on false confidence in something that isn't true.
+
+**Documentation tools:**
+- **docsify** — Zero-config documentation site generator. Converts markdown to beautiful, searchable sites without build step. Used across my projects (dotclaude, vaultmux, gcp-secret-manager-emulator) with custom Blackwell theme at [blackwell-docs-theme](https://github.com/blackwell-systems/blackwell-docs-theme)
+
+**Syntax highlighting in code blocks:**
+
+GitHub (and most markdown renderers) support syntax highlighting via the info string after opening triple backticks. Most renderers pass this into a syntax highlighter and colorize appropriately—adding language hints dramatically improves documentation readability.
+
+```markdown
+```rust
+fn main() {
+    println!("Hello, world!");
+}
+` ``
+
+```python
+def main():
+    print("Hello, world!")
+` ``
+
+```bash
+echo "Hello, world!"
+` ``
+```
+
+**Common language identifiers:**
+- `rust`, `go`, `python`, `javascript`, `typescript`, `bash`, `sh`, `zsh`
+- `json`, `yaml`, `toml`, `xml`, `html`, `css`
+- `sql`, `dockerfile`, `makefile`, `nginx`
+- `diff`, `patch`, `log`, `plaintext`
+
+**Why this matters:**
+- Syntax highlighting makes code blocks 10x more readable
+- It signals to readers what language/format they're looking at
+- It catches basic syntax errors visually (wrong quotes, missing brackets)
+- It's zero-effort once you remember to add the language identifier
+- Good documentation accelerates onboarding and reduces support burden
+
+**Documentation hygiene:**
+- Keep docs in sync with code (treat as part of the same PR)
+- Use code blocks with language hints for all examples
+- Include "Why" and "When" sections, not just "How"
+- Add runnable examples that can be copy-pasted
+- Delete or update outdated docs immediately—don't let them linger
 
 ---
 
