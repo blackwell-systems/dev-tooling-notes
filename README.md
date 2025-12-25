@@ -8,10 +8,11 @@ This is a living reference for future-me and anyone who wants a practical, moder
 - [Philosophy](#philosophy)
 - [At-a-glance Stack](#at-a-glance-stack)
 - [Terminal & Shell](#terminal--shell)
-  - [Shell UX](#shell-ux)
-  - [Modern CLI essentials](#modern-cli-essentials)
-  - [Documentation & Diagrams](#documentation--diagrams)
-  - [Markdown Formatting](#markdown-formatting)
+- [Documentation & Diagrams](#documentation--diagrams)
+  - [Tools](#tools)
+  - [Philosophy](#philosophy-1)
+  - [Syntax Highlighting](#syntax-highlighting-in-code-blocks)
+  - [README as Landing Page](#readme-as-landing-page)
 - [Language Tooling](#language-tooling)
   - [Go](#go)
   - [Python](#python)
@@ -95,8 +96,12 @@ I try to avoid duplicating setup steps that my dotfiles bootstrap already automa
 ### File management
 - **yazi** — fast terminal file manager
 
-### Documentation & Diagrams
-- **glow** — Markdown rendering in terminal (already listed above)
+---
+
+## Documentation & Diagrams
+
+**Tools:**
+- **glow** — Markdown rendering in terminal
 - **mermaid-cli** — Render and validate mermaid diagrams
   ```bash
   npm install -g @mermaid-js/mermaid-cli
@@ -119,12 +124,11 @@ I try to avoid duplicating setup steps that my dotfiles bootstrap already automa
   - Deep nesting (subgraphs within subgraphs) often fails on GitHub
   - Keep diagrams simple: flat structure > nested complexity
 
-### Markdown Formatting
+- **docsify** — Zero-config documentation site generator. Converts markdown to beautiful, searchable sites without build step. Used across my projects (dotclaude, vaultmux, gcp-secret-manager-emulator) with custom Blackwell theme at [blackwell-docs-theme](https://github.com/blackwell-systems/blackwell-docs-theme)
+
+### Philosophy
 
 Documentation is a first-class citizen in my development process. Outdated documentation is worse than no documentation—at least with no docs, you're encouraged to find answers yourself rather than rely on false confidence in something that isn't true.
-
-**Documentation tools:**
-- **docsify** — Zero-config documentation site generator. Converts markdown to beautiful, searchable sites without build step. Used across my projects (dotclaude, vaultmux, gcp-secret-manager-emulator) with custom Blackwell theme at [blackwell-docs-theme](https://github.com/blackwell-systems/blackwell-docs-theme)
 
 **Syntax highlighting in code blocks:**
 
