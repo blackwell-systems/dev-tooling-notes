@@ -167,6 +167,32 @@ echo "Hello, world!"
 - Add runnable examples that can be copy-pasted
 - Delete or update outdated docs immediately—don't let them linger
 
+**README as landing page:**
+
+For GitHub/crates.io/PyPI repositories, treat the README as a landing page that sells the idea quickly and points to real documentation. Documentation sprawl is real and needs to be kept in check.
+
+One of the best ways to combat sprawl: treat your main README like a thin landing page and navigation hub with short, powerful descriptions of features which then link out to the real documentation.
+
+**README structure:**
+- **Top section** - One-sentence value proposition, badges, quick example
+- **Quick Start** - Minimal working example (5-10 lines)
+- **Features** - Bullet list with short descriptions + links to detailed docs
+- **Installation** - One command, link to detailed setup guide
+- **Documentation** - Links to API docs, guides, examples
+- **Contributing** - Link to CONTRIBUTING.md
+
+**Keep READMEs short:**
+- Aim for 200-400 lines max
+- If README exceeds 500 lines, it's doing too much
+- Move detailed content to docs/ directory (guides, architecture, API reference)
+- Use ARCHITECTURE.md for visual/diagram-heavy explanations
+- Use separate files for migration guides, comparisons, tutorials
+
+**Examples of good README structure:**
+- error-envelope: 337 lines, links to examples/ and docs.rs
+- domainstack: Navigation hub with links to 8 crates, docs/ guides
+- vaultmux: Quick examples, links to detailed docs/ directory
+
 ---
 
 ## Language Tooling
