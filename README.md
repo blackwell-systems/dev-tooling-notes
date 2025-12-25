@@ -165,6 +165,31 @@ Testing:
 - **proptest** — property-based testing library that generates random test inputs to find edge cases. Useful for testing invariants (e.g., "parsing then serializing should return the original input") rather than specific examples
 - **insta** — snapshot testing tool that captures output as "snapshots" and detects changes. Perfect for testing serialization formats (JSON, YAML), rendered output (SVG, HTML), or CLI output where you want to catch any unintended changes
 
+Documentation:
+- **Doc comments (`///`)** are first-class in Rust and render on [docs.rs](https://docs.rs) when published
+- **Check coverage locally before publishing:**
+  ```bash
+  # Generate and open docs locally (catches rendering issues)
+  cargo doc --open --no-deps
+  
+  # Check documentation coverage with nightly (requires unstable flag)
+  RUSTDOCFLAGS="-Z unstable-options --show-coverage" cargo +nightly doc --no-deps
+  ```
+- **Why this matters:**
+  - docs.rs is the public face of your crate—low coverage looks unfinished
+  - Checking locally catches missing docs before publishing (no "oops, forgot that pub field" moments)
+  - Documentation coverage is basic project hygiene, like test coverage or clippy warnings
+  - Many projects aim for 100% coverage on public items (especially libraries meant for external use)
+- **What gets counted:**
+  - Public modules, structs, enums, traits, functions, methods
+  - Public enum variants (often forgotten!)
+  - Public struct fields (another common miss)
+  - Re-exported items (via `pub use`)
+- **Common gotchas:**
+  - Struct-level docs don't count toward field coverage—each `pub field` needs its own `///`
+  - Enum-level docs don't cover variants—document each variant separately
+  - Private items aren't counted (good—focus on your public API)
+
 ### Node.js (as needed)
 - **nvm** (or a lazy-load integration)
 
