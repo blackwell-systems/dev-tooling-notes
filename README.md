@@ -3,6 +3,24 @@
 My personal, evolving list of development tools I use across **macOS**, **Linux (Lima/Ubuntu)**, and **WSL2**.
 This is a living reference for future-me and anyone who wants a practical, modern, multi-machine setup.
 
+## Table of Contents
+
+- [Philosophy](#philosophy)
+- [At-a-glance Stack](#at-a-glance-stack)
+- [Terminal & Shell](#terminal--shell)
+- [Language Tooling](#language-tooling)
+  - [Go](#go)
+  - [Python](#python)
+  - [Java](#java)
+  - [Rust](#rust)
+  - [Node.js](#nodejs-as-needed)
+- [AWS & Infra](#aws--infra)
+- [Docker-based Testing](#docker-based-testing)
+- [Databases & API Testing](#databases--api-testing)
+- [CI/CD](#cicd)
+- [Installation (Optional)](#installation-optional)
+- [License](#license)
+
 ---
 
 ## Philosophy
@@ -167,6 +185,10 @@ Testing:
 
 Documentation:
 - **Doc comments (`///`)** are first-class in Rust and render on [docs.rs](https://docs.rs) when published
+- **Crate-level docs (`//!`)** - Use inner doc comments at the top of `src/lib.rs` to document the entire crate
+  - First paragraph becomes the crate description on docs.rs
+  - Should include: purpose, quick example, feature flags, links to guides
+  - Example: `//! A tiny, framework-agnostic error envelope for HTTP APIs.`
 - **Check coverage locally before publishing:**
   ```bash
   # Generate and open docs locally (catches rendering issues)
@@ -185,10 +207,12 @@ Documentation:
   - Public enum variants (often forgotten!)
   - Public struct fields (another common miss)
   - Re-exported items (via `pub use`)
+  - Crate-level documentation (the `//!` block in lib.rs)
 - **Common gotchas:**
   - Struct-level docs don't count toward field coverage—each `pub field` needs its own `///`
   - Enum-level docs don't cover variants—document each variant separately
   - Private items aren't counted (good—focus on your public API)
+  - Module-level docs use `//!` (inner) not `///` (outer)
 
 ### Node.js (as needed)
 - **nvm** (or a lazy-load integration)
