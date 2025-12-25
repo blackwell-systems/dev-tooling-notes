@@ -192,11 +192,6 @@ One of the best ways to combat sprawl: treat your main README like a thin landin
 - Use ARCHITECTURE.md for visual/diagram-heavy explanations
 - Use separate files for migration guides, comparisons, tutorials
 
-**Examples of good README structure:**
-- error-envelope: 337 lines, links to examples/ and docs.rs
-- domainstack: Navigation hub with links to 8 crates, docs/ guides
-- vaultmux: Quick examples, links to detailed docs/ directory
-
 ---
 
 ## Language Tooling
