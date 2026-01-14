@@ -227,10 +227,21 @@ I'm standardizing around:
 - **pydantic** — data validation and serialization
 - **fastapi** — modern async web framework
 - **mangum** — AWS Lambda adapter for ASGI apps (FastAPI, Starlette)
+- **ipython** — enhanced interactive shell with tab completion, magic commands, object introspection
+
+Interactive Development:
+- **IPython** is the standard enhanced REPL
+  - Tab completion with context-aware suggestions
+  - Object introspection: `object?` for docstring, `object??` for source code
+  - Magic commands: `%timeit` (benchmarking), `%run` (execute scripts), `%debug` (post-mortem debugging)
+  - Multi-line editing and syntax highlighting
+  - Install: `uv tool install ipython` or `pip install ipython`
+- Alternative REPLs: `bpython` (inline suggestions), `ptpython` (dropdown menus)
 
 Notes:
 - FastAPI + pydantic is my preferred Python API stack: automatic validation, serialization, and OpenAPI docs from type hints. Feels closer to strongly-typed languages while staying Pythonic.
 - Mangum lets you deploy the same FastAPI app to Lambda without code changes—just wrap the ASGI app.
+- IPython is essential for API exploration, quick testing, and debugging—use it instead of standard `python` REPL for day-to-day work.
 
 ### Java
 Core:
