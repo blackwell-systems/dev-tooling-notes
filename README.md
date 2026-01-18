@@ -7,6 +7,7 @@ This is a living reference for future-me and anyone who wants a practical, moder
 
 - [Philosophy](#philosophy)
 - [At-a-glance Stack](#at-a-glance-stack)
+- [Editors & IDEs](#editors--ides)
 - [Terminal & Shell](#terminal--shell)
 - [Documentation & Diagrams](#documentation--diagrams)
   - [Tools](#tools)
@@ -71,6 +72,131 @@ I try to avoid duplicating setup steps that my dotfiles bootstrap already automa
 
 ### CI/CD
 - **GitHub Actions** — used across OSS repos.
+
+---
+
+## Editors & IDEs
+
+### Heavy-Weight IDEs (JetBrains Ecosystem)
+
+For full-featured, modern GUI IDE work, I'm a big fan of the **JetBrains ecosystem**:
+
+- **PyCharm** — Python (Professional or Community)
+- **GoLand** — Go development
+- **RustRover** — Rust development
+- **IntelliJ IDEA** — Java/Kotlin (Ultimate or Community)
+- **WebStorm** — JavaScript/TypeScript
+- **DataGrip** — Database client (all SQL dialects + NoSQL)
+
+**Why JetBrains:**
+- **Deep language integration:** Not just LSP - native language analysis, refactoring, debugging
+- **Powerful refactoring:** Rename, extract method, inline, move - all work reliably across languages
+- **Built-in tools:** Database clients, HTTP client, terminal, Git, Docker - everything integrated
+- **Consistent UX:** Learn once, apply to all languages (PyCharm to GoLand feels natural)
+- **Intelligent completion:** Context-aware suggestions that understand frameworks (Django, Spring, etc.)
+- **Debugger excellence:** Best-in-class debugging experience with evaluate expression, conditional breakpoints
+- **Search everything:** Double-shift to search files, classes, symbols, actions - incredibly fast navigation
+
+**Trade-offs:**
+- Heavy resource usage (1-2GB RAM per IDE instance)
+- Expensive (but worth it for professional work - All Products Pack recommended)
+- Slower startup than lightweight editors
+- Can feel sluggish on older machines
+
+**When I use JetBrains:**
+- Large codebases (10k+ lines)
+- Complex refactoring tasks
+- Learning new frameworks (smart completion teaches you the API)
+- Debugging complex issues (breakpoint conditions, expression evaluation)
+- Working with databases (DataGrip built into all IDEs)
+- Production work where mistakes are expensive
+
+### VS Code
+
+**I can work with VS Code, but I've never felt really at home or comfortable with it.**
+
+**What VS Code does well:**
+- Fast startup
+- Huge extension ecosystem
+- Good remote development (SSH, WSL, containers)
+- Lower resource usage than JetBrains
+- Free and open source
+- Cross-platform consistency
+
+**Why I don't prefer it:**
+- Extension quality varies wildly (some excellent, many mediocre)
+- Configuration complexity (need to find and install right extensions)
+- Refactoring not as robust as JetBrains
+- TypeScript/JavaScript focus - other languages feel second-class
+- Electron-based (feels less native than JetBrains)
+
+**When VS Code makes sense:**
+- Resource-constrained machines
+- Quick edits (faster startup)
+- Remote development workflows
+- Team standardized on VS Code
+- Budget is a concern (free vs JetBrains subscription)
+
+### Terminal Editors (Helix)
+
+**I've recently begun getting into Helix and have been making a significant effort to use that on a daily basis.**
+
+**Why Helix:**
+- **Zero configuration:** Works out-of-box with LSP
+- **Selection-first:** See what you're changing before you change it
+- **Fast:** No Electron, no GUI overhead
+- **Modern:** Tree-sitter, LSP, multiple selections built-in
+- **Terminal-native:** SSH, remote servers, lightweight environments
+- **No plugins needed:** Batteries included
+
+**Current workflow:**
+- Small projects and quick edits
+- Server-side work (SSH sessions)
+- When I want distraction-free editing
+- Learning phase (building muscle memory)
+
+**Helix trade-offs:**
+- Modal editing learning curve (2-3 weeks to comfortable)
+- Terminal-only (no GUI affordances)
+- Less powerful refactoring than JetBrains
+- Limited debugging compared to IDEs
+
+**My editor progression:**
+- **Starting out:** JetBrains (full features, easy to learn)
+- **Quick edits / SSH:** Helix (fast, terminal-native)
+- **VS Code:** When required by team or for specific extensions
+
+**Long-term vision:**
+- Use Helix as daily driver for most work
+- Keep JetBrains for complex refactoring and debugging
+- Minimize VS Code usage (only when necessary)
+
+### Editor Recommendation by Context
+
+**Large Python project with Django:**
+- 1st choice: PyCharm (framework integration is unmatched)
+- 2nd choice: VS Code (with Pylance extension)
+- 3rd choice: Helix (works but less integrated)
+
+**Go microservice (5k lines):**
+- 1st choice: Helix (fast, gopls is excellent)
+- 2nd choice: GoLand (for refactoring)
+- 3rd choice: VS Code
+
+**Rust CLI tool:**
+- 1st choice: RustRover (best Rust tooling)
+- 2nd choice: Helix (rust-analyzer is excellent)
+- 3rd choice: VS Code (with rust-analyzer)
+
+**Quick config edit on server:**
+- 1st choice: Helix
+- 2nd choice: vim/nano (if Helix not installed)
+- No GUI options available
+
+**Learning new language/framework:**
+- 1st choice: JetBrains (intelligent completion teaches you the API)
+- 2nd choice: VS Code (good docs integration)
+- 3rd choice: Helix (once you know the language)
 
 ---
 
