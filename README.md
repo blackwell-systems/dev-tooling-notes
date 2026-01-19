@@ -137,29 +137,114 @@ For full-featured, modern GUI IDE work, I'm a big fan of the **JetBrains ecosyst
 - Team standardized on VS Code
 - Budget is a concern (free vs JetBrains subscription)
 
-### Terminal Editors (Helix)
+### Terminal Editors (Helix + yazi)
 
 **I've recently begun getting into Helix and have been making a significant effort to use that on a daily basis.**
 
 **Why Helix:**
 - **Zero configuration:** Works out-of-box with LSP
-- **Selection-first:** See what you're changing before you change it
+- **Selection-first editing:** See what you're changing before you change it (my strong preference)
 - **Fast:** No Electron, no GUI overhead
 - **Modern:** Tree-sitter, LSP, multiple selections built-in
 - **Terminal-native:** SSH, remote servers, lightweight environments
 - **No plugins needed:** Batteries included
 
+**Why selection-first matters to me:**
+- Less destructive than Vim's action-first model (dw = blind delete)
+- Visual feedback before action (w then d = see selection, then delete)
+- More predictable and safer for refactoring
+- Matches how modern GUI editors work (select, then act)
+
+**Project Status Concerns (January 2025):**
+- Core maintainers have limited time
+- PRs waiting 5+ months for review
+- ~80% of recent commits are themes/tree-sitter only
+- No clear roadmap or governance structure
+- Community discussing forks and alternatives
+
+**Why I'm still using it:**
+- Current features work perfectly (stable, reliable)
+- Selection-first editing is rare in terminal editors
+- Interview prep doesn't need new features
+- Will reassess if maintenance becomes a real problem
+
+**Missing Feature Workaround:**
+- **No built-in file tree** - Use yazi (terminal file manager) in tmux/zellij split
+- **Workflow:** Left pane = yazi (visual file navigation), Right pane = Helix (editing)
+- **Result:** Best of both worlds - file tree + selection-first editing
+
 **Current workflow:**
 - Small projects and quick edits
 - Server-side work (SSH sessions)
+- Interview preparation (simple file structures)
 - When I want distraction-free editing
-- Learning phase (building muscle memory)
 
 **Helix trade-offs:**
+- No integrated file tree (use yazi alongside)
+- Project maintenance concerns (governance issues)
 - Modal editing learning curve (2-3 weeks to comfortable)
 - Terminal-only (no GUI affordances)
 - Less powerful refactoring than JetBrains
 - Limited debugging compared to IDEs
+
+**Long-term plan:**
+- Use Helix while it's stable and maintained
+- If project dies: Consider Neovim + LazyVim (has file tree, active development)
+- Trade-off: Would lose selection-first editing (Vim is action-first)
+- Alternative: Wait for potential Helix fork with active maintenance
+
+**Practical Setup (Helix + yazi + tmux/zellij):**
+
+```bash
+# Install stack
+brew install helix yazi tmux  # or zellij instead of tmux
+
+# tmux layout script
+cat > ~/bin/helix-dev <<'EOF'
+#!/bin/bash
+tmux new-session -d -s dev
+tmux split-window -h -t dev -p 25  # yazi gets 25% width
+tmux send-keys -t dev:0.0 'yazi' C-m
+tmux send-keys -t dev:0.1 'hx .' C-m
+tmux select-pane -t dev:0.1  # Focus on Helix pane
+tmux attach -t dev
+EOF
+chmod +x ~/bin/helix-dev
+
+# Usage
+cd project/
+helix-dev  # Opens tmux with yazi (left) + helix (right)
+```
+
+**Alternative with zellij (better defaults):**
+
+```bash
+# Create zellij layout
+mkdir -p ~/.config/zellij/layouts
+cat > ~/.config/zellij/layouts/helix-dev.kdl <<'EOF'
+layout {
+    pane split_direction="vertical" {
+        pane command="yazi" {
+            size "25%"
+        }
+        pane command="hx" {
+            args "."
+            focus true
+        }
+    }
+}
+EOF
+
+# Usage
+cd project/
+zellij --layout helix-dev
+```
+
+**Workflow:**
+1. Navigate files in yazi (j/k, Enter to open)
+2. Files open in Helix automatically
+3. Edit with selection-first model
+4. Ctrl+b then o (tmux) or Alt+hjkl (zellij) to switch panes
 
 ---
 
