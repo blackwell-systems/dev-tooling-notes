@@ -155,24 +155,6 @@ For full-featured, modern GUI IDE work, I'm a big fan of the **JetBrains ecosyst
 - More predictable and safer for refactoring
 - Matches how modern GUI editors work (select, then act)
 
-**Project Status Concerns (January 2025):**
-- Core maintainers have limited time
-- PRs waiting 5+ months for review
-- ~80% of recent commits are themes/tree-sitter only
-- No clear roadmap or governance structure
-- Community discussing forks and alternatives
-
-**Why I'm still using it:**
-- Current features work perfectly (stable, reliable)
-- Selection-first editing is rare in terminal editors
-- Interview prep doesn't need new features
-- Will reassess if maintenance becomes a real problem
-
-**Missing Feature Workaround:**
-- **No built-in file tree** - Use yazi (terminal file manager) in tmux/zellij split
-- **Workflow:** Left pane = yazi (visual file navigation), Right pane = Helix (editing)
-- **Result:** Best of both worlds - file tree + selection-first editing
-
 **Current workflow:**
 - Small projects and quick edits
 - Server-side work (SSH sessions)
@@ -181,17 +163,10 @@ For full-featured, modern GUI IDE work, I'm a big fan of the **JetBrains ecosyst
 
 **Helix trade-offs:**
 - No integrated file tree (use yazi alongside)
-- Project maintenance concerns (governance issues)
 - Modal editing learning curve (2-3 weeks to comfortable)
 - Terminal-only (no GUI affordances)
 - Less powerful refactoring than JetBrains
 - Limited debugging compared to IDEs
-
-**Long-term plan:**
-- Use Helix while it's stable and maintained
-- If project dies: Consider Neovim + LazyVim (has file tree, active development)
-- Trade-off: Would lose selection-first editing (Vim is action-first)
-- Alternative: Wait for potential Helix fork with active maintenance
 
 **Practical Setup (Helix + yazi + tmux/zellij):**
 
