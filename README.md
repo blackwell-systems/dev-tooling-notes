@@ -274,6 +274,7 @@ zellij --layout helix-dev
   - Keep diagrams simple: flat structure > nested complexity
 
 - **docsify** — Zero-config documentation site generator. Converts markdown to beautiful, searchable sites without build step. Used across my projects (dotclaude, vaultmux, gcp-secret-manager-emulator) with custom Blackwell theme at [blackwell-docs-theme](https://github.com/blackwell-systems/blackwell-docs-theme)
+- **mdBook** — Rust-based documentation generator (used by Rust Book). Creates beautiful static sites with collapsible sidebar navigation from markdown. Best for technical documentation, tutorials, and knowledge bases. Zero JavaScript required for rendering. Installed via `cargo install mdbook`
 
 ### Philosophy
 
